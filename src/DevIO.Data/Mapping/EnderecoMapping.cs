@@ -22,6 +22,10 @@ namespace DevIO.Data.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(100)");
 
+            builder.Property(e => e.Cep)
+                .IsRequired()
+                .HasColumnType("varchar(8)");
+
             builder.Property(e => e.Bairro)
                 .IsRequired()
                 .HasColumnType("varchar(100)");
