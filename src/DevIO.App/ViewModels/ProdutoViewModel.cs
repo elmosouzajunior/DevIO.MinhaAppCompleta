@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DevIO.App.Extensions;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DevIO.App.ViewModels
 {
@@ -28,8 +28,11 @@ namespace DevIO.App.ViewModels
 
         public string Imagem { get; set; }
 
+        [NotMappedAttribute]
+        [DisplayName("Imagem do Produto")]
         public IFormFile ImagemUpload { get; set; }
 
+        [Moeda]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public decimal Valor { get; set; }
 

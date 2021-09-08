@@ -25,7 +25,7 @@ namespace DevIO.App.ViewModels
         [StringLength(10, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 1)]
         public string Numero { get; set; }
                 
-        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 3)]
+        [StringLength(100)]
         public string Complemento { get; set; }
 
         [DisplayName("CEP")]
@@ -34,11 +34,11 @@ namespace DevIO.App.ViewModels
         public string Cep { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 8)]
+        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 3)]
         public string Bairro { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 8)]
+        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 3)]
         public string Cidade { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
