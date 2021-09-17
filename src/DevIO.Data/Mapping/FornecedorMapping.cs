@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DevIO.Data.Mapping
+namespace DevIO.Data.Mappings
 {
-    class FornecedorMapping : IEntityTypeConfiguration<Fornecedor>
+    public class FornecedorMapping : IEntityTypeConfiguration<Fornecedor>
     {
         public void Configure(EntityTypeBuilder<Fornecedor> builder)
         {
@@ -27,7 +27,7 @@ namespace DevIO.Data.Mapping
                 .WithOne(p => p.Fornecedor)
                 .HasForeignKey(p => p.FornecedorId);
 
-            builder.ToTable("Fornecedores"); 
+            builder.ToTable("Fornecedores");
         }
     }
 }

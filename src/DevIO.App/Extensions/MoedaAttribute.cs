@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using Microsoft.Extensions.Localization;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.Extensions.Localization;
 
 namespace DevIO.App.Extensions
 {
@@ -20,7 +20,7 @@ namespace DevIO.App.Extensions
                 return new ValidationResult("Moeda em formato inválido");
             }
 
-            return base.IsValid(value, validationContext);
+            return ValidationResult.Success;
         }
     }
 
@@ -52,7 +52,7 @@ namespace DevIO.App.Extensions
 
         public IAttributeAdapter GetAttributeAdapter(ValidationAttribute attribute, IStringLocalizer stringLocalizer)
         {
-           if (attribute is MoedaAttribute moedaAttribute)
+            if (attribute is MoedaAttribute moedaAttribute)
             {
                 return new MoedaAttributeAdapter(moedaAttribute, stringLocalizer);
             }

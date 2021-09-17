@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DevIO.Data.Mapping
+namespace DevIO.Data.Mappings
 {
-    class ProdutoMapping : IEntityTypeConfiguration<Produto>
+    public class ProdutoMapping : IEntityTypeConfiguration<Produto>
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
@@ -26,5 +26,3 @@ namespace DevIO.Data.Mapping
         }
     }
 }
-
-    
